@@ -3,9 +3,9 @@ import os
 
 # --- CẤU HÌNH BẢO MẬT ---
 # Thay vì điền trực tiếp, ta dùng os.environ.get để lấy từ Secret
-CLOUDFLARE_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
-CLOUDFLARE_LIST_ID    = os.environ.get("CF_LIST_ID")
-CLOUDFLARE_API_TOKEN  = os.environ.get("CF_API_TOKEN")
+CLOUDFLARE_ACCOUNT_ID = os.environ.get("CLOUDFLARE_ACCOUNT_ID")
+CLOUDFLARE_LIST_ID    = os.environ.get("CLOUDFLARE_LIST_ID")
+CLOUDFLARE_API_TOKEN  = os.environ.get("CLOUDFLARE_API_TOKEN")
 
 # URL này thường không cần mật, nhưng nếu bạn muốn giấu luôn thì làm như sau:
 GITHUB_RAW_URL = os.environ.get("TARGET_RAW_URL") 
