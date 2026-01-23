@@ -1,18 +1,20 @@
 import requests
 import os
 
-# --- CẤU HÌNH ---
-# Lấy key từ Github Secrets
-CF_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
-CF_LIST_ID = os.environ.get("CF_LIST_ID")
-CF_TOKEN = os.environ.get("CF_API_TOKEN")
+# --- CẤU HÌNH BẢO MẬT ---
+# Thay vì điền trực tiếp, ta dùng os.environ.get để lấy từ Secret
+CLOUDFLARE_ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
+CLOUDFLARE_LIST_ID    = os.environ.get("CF_LIST_ID")
+CLOUDFLARE_API_TOKEN  = os.environ.get("CF_API_TOKEN")
 
-# Link danh sách gốc
-IPSUM_URL = "https://raw.githubusercontent.com/stamparm/ipsum/refs/heads/master/ipsum.txt"
+# URL này thường không cần mật, nhưng nếu bạn muốn giấu luôn thì làm như sau:
+GITHUB_RAW_URL = os.environ.get("TARGET_RAW_URL") 
+# Nếu không cần giấu URL thì để nguyên string cũng được:
+# GITHUB_RAW_URL = "https://raw.githubusercontent.com/user/repo/main/list.txt"
 
 # Cloudflare giới hạn số lượng IP (Gói Free thường là 1000 hoặc 5000 IP)
 # Chúng ta sẽ lấy 2000 IP đứng đầu (nguy hiểm nhất) để tránh lỗi Full List
-MAX_IPS = 2000
+MAX_IPS = 1000
 
 def run_update():
     print("1. Đang tải danh sách từ Github Ipsum...")
