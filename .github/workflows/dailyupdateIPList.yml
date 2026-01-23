@@ -1,12 +1,12 @@
-name: Daily Update
+name: Custom IP List Update
 
 on:
   schedule:
-    - cron: '0 1 * * *' # Chạy lúc 3:00 sáng (UTC)
-  workflow_dispatch: # Cho phép bấm chạy thủ công
+    - cron: '0 3 * * *' # Chạy 3h sáng hàng ngày
+  workflow_dispatch:
 
 jobs:
-  update-lists:
+  update-ip-list:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -15,84 +15,15 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
-          cache: "pip"
+          python-version: '3.9'
 
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt || true
-          pip install requests # Cài thêm requests để chạy script Ipsum
+      - name: Install Requests
+        run: pip install requests
 
-      # --- BẮT ĐẦU PHẦN TÍCH HỢP IPSUM (MỚI) ---
-      - name: Custom Update Ipsum IP List
+      - name: Run Update Script
+        # ĐOẠN NÀY KHỚP VỚI HÌNH ẢNH CỦA BẠN
         env:
-          # Tận dụng biến có sẵn trong Repo của bạn
-          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          # Biến này bạn cần thêm vào Secret (ID của List IP rỗng)
-          CF_LIST_ID: ${{ secrets.CLOUDFLARE_IP_LIST_ID }}
-        run: |
-          # Tạo file python tạm thời ngay trong quy trình chạy
-          cat <<EOF > update_ipsum_temp.py
-          import requests
-          import os
-          import sys
-
-          # Cấu hình
-          ACCOUNT_ID = os.environ.get("CF_ACCOUNT_ID")
-          API_TOKEN = os.environ.get("CF_API_TOKEN")
-          LIST_ID = os.environ.get("CF_LIST_ID")
-          IPSUM_URL = "https://raw.githubusercontent.com/stamparm/ipsum/refs/heads/master/ipsum.txt"
-          MAX_IPS = 2000 # Giới hạn 2000 IP nguy hiểm nhất
-
-          if not LIST_ID:
-              print("⚠️ BỎ QUA: Không tìm thấy CLOUDFLARE_IP_LIST_ID trong Secrets.")
-              sys.exit(0) # Thoát êm đẹp nếu không có secret, không làm lỗi quy trình
-
-          print(f"1. Đang tải Ipsum từ {IPSUM_URL}...")
-          try:
-              r = requests.get(IPSUM_URL)
-              data = r.text.splitlines()
-              
-              clean_ips = []
-              for line in data:
-                  line = line.strip()
-                  if not line or line.startswith("#"): continue
-                  parts = line.split()
-                  if len(parts) >= 1:
-                      clean_ips.append({"value": parts[0]})
-              
-              final_list = clean_ips[:MAX_IPS]
-              print(f"-> Lọc được {len(final_list)} IP.")
-
-              print("2. Đang đẩy lên Cloudflare...")
-              url = f"https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/gateway/lists/{LIST_ID}/items"
-              headers = {"Authorization": f"Bearer {API_TOKEN}", "Content-Type": "application/json"}
-              
-              # Dùng PUT để ghi đè danh sách cũ
-              resp = requests.put(url, json=final_list, headers=headers)
-              
-              if resp.status_code == 200:
-                  print("✅ Cập nhật IP thành công!")
-              else:
-                  print(f"❌ Lỗi Cloudflare: {resp.text}")
-
-          except Exception as e:
-              print(f"❌ Lỗi Script: {e}")
-          EOF
-
-          # Chạy file python vừa tạo
-          python update_ipsum_temp.py
-          
-          # Xóa file tạm sau khi chạy xong
-          rm update_ipsum_temp.py
-      # --- KẾT THÚC PHẦN TÍCH HỢP IPSUM ---
-
-      # Script gốc của adv247 vẫn chạy sau đó để update Domain
-      - name: Run Main Script
-        env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Các biến khác nếu repo gốc cần
-          CLOUDFLARE_LIST_ITEM_LIMIT: ${{ secrets.CLOUDFLARE_LIST_ITEM_LIMIT }}
-        run: python src/main.py
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_IP_LIST_ID: ${{ secrets.CLOUDFLARE_IP_LIST_ID }}
+        run: python scripts/clean_ipsum.py
