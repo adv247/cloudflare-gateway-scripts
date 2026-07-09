@@ -1,0 +1,202 @@
+ads.zalo.me
+adv.zalo.me
+tracking.zalo.me
+analytics.zaloapp.com
+centralized.zaloapp.com
+log.zalo.me
+stat.zalo.me
+pixel.zalo.me
+event.zalo.me
+tag.zalo.me
+sp1.zdn.vn
+analytics.zapps.me
+log.zaloapp.com
+metrics.zaloapp.com
+report.zalo.me
+telemetry.zaloapp.com
+script.zalo.me
+log.zapps.me
+# === KHÁM PHÁ (Discover/Explore) ========================
+discover.zalo.me
+explore.zalo.me
+recommend.zalo.me
+suggestion.zalo.me
+trending.zalo.me
+home.zalo.me
+# === NHẬT KÝ (Story/Timeline/Feed) ======================
+feed.zalo.me
+story.zalo.me
+timeline.zalo.me
+moment.zaloapp.com
+social.zalo.me
+post.zalo.me
+# === QUẢNG CÁO TRONG NHẬT KÝ =========================
+ads.zalo.me
+adv.zalo.me
+ads-platform.zalo.me
+sp.zalo.me
+sponsor.zalo.me
+promote.zalo.me
+# === ZALO OA / ZNS SPAM ================================
+zns.zalo.me
+notification.zaloapp.com
+oa.zalo.me
+broadcast.zalo.me
+# === NỘI DUNG / TIN TỨC ================================
+news.zalo.me
+article.zalo.me
+content.zalo.me
+media.zalo.me
+# === SHOP / THƯƠNG MẠI ================================
+shop.zalo.me
+commerce.zalo.me
+market.zalo.me
+# === ERP / BUSINESS / MARKETING =======================
+erp.zalo.me
+hub.zalo.me
+business.zalo.me
+crm.zalo.me
+# === VIDEO FEED / LIVE ==================================
+zalo.video
+stream.zalo.me
+live.zalo.me
+shorts.zalo.me
+# ================= TRACKING ĐI KÈM ======================
+event.zalo.me
+tracking.zalo.me
+pixel.zalo.me
+tag.zalo.me
+log.zalo.me
+stat.zalo.me
+analytics.zaloapp.com
+centralized.zaloapp.com
+beacon.zaloapp.com
+sp1.zdn.vn
+sp2.zdn.vn
+sp3.zdn.vn
+# === ZING NEWS / ZNEWS ===============================
+zingnews.vn
+znews.vn
+cdn.zingnews.vn
+static.zingnews.vn
+ads.zingnews.vn
+tracking.zingnews.vn
+# === ZING MP3 =======================================
+zingmp3.vn
+mp3.zing.vn
+st.mp3.zing.vn
+cdn.zingmp3.vn
+ads.zingmp3.vn
+logging.zingmp3.vn
+# === ZING TV / VIDEO ================================
+zingtv.vn
+tv.zing.vn
+cdn.zingtv.vn
+# === ZING PLAY (GAME VNG) ===========================
+zingplay.com
+game.zing.vn
+cdn.zingplay.com
+# === VNG ADS & TRACKING ============================
+ads.vng.com.vn
+adnet.vng.com.vn
+tracking.vng.com.vn
+analytics.vng.com.vn
+log.vng.com.vn
+stat.vng.com.vn
+pixel.vng.com.vn
+metrics.vng.com.vn
+# === VNG CDN / SHARED INFRA ======================
+vgcloud.vn
+talk.zing.vn
+cdn.zing.vn
+static.zing.vn
+img.zing.vn
+ads.zing.vn
+# === ZING ID / SSO (login cross-app) =============
+id.zing.vn
+passport.zing.vn
+oauth.zing.vn
+sso.zing.vn
+# === ZALO OA CORE =================================
+oa.zalo.me
+openapi.zalo.me
+business.openapi.zalo.me
+zns.zalo.me
+zca.zalo.me
+zma.zalo.me
+# === OA BROADCAST / NOTIFICATION =====================
+broadcast.zalo.me
+notification.zaloapp.com
+push-notification.zaloapp.com
+alert.zalo.me
+noti.zalo.me
+# === OA FORM / LANDING PAGE ===========================
+form.zalo.me
+form.ads.zalo.me
+zpage.zalo.me
+page.zalo.me
+landing.zalo.me
+miniapp.zalo.me
+# === OA DEVELOPER / SDK ===========================
+developers.zalo.me
+stc-developers.zdn.vn
+dev.zalo.me
+sdk.zalo.me
+webhook.zalo.me
+# === OA STATIC / CDN ===========================
+stc-oa.zdn.vn
+stc.zdn.vn
+img-oa.zdn.vn
+media-oa.zdn.vn
+# === OA HUB / CRM / MARKETING ===================
+hub.zalo.me
+crm.zalo.me
+erp.zalo.me
+business.zalo.me
+shop.zalo.me
+promote.zalo.me
+sponsor.zalo.me
+# === ZNS / ZCA / ZMA ===========================
+zalo.cloud
+zca.zalo.me
+zma.zalo.me
+# === ZALO MEDIABOX ========================
+media.zalo.me
+stream.zalo.me
+live.zalo.me
+zalo.video
+cdn.zalo.video
+vod.zalo.me
+shorts.zalo.me
+player.zaloapp.com
+mediabox.zaloapp.com
+video-cdn.zaloapp.com
+# === ZALO UPDATE / DOWNLOAD =========================
+dl.zaloapp.com
+dl.zalo.me
+update.zaloapp.com
+upgrade.zaloapp.com
+release.zaloapp.com
+apk.zaloapp.com
+# ================######VIBER####================
+ads.viber.com
+ads.aws.viber.com
+ads-d.viber.com
+s-bid.rmp.rakuten.com
+ads.cdn.viber.com
+ads.*.viber.com
+locp-ir.viber.com
+rmp.rakuten.com
+ams1-mobile.adnxs.com
+api.mixpanel.com
+fra1-ib.adnxs.com
+mediation.adnxs.com
+s-imp.rmp.rakuten.com
+images.taboola.com
+api.taboola.com
+app-updates.agilebits.com
+d.agilebits.com
+c.1password.com
+cache.agilebits.com
+events.1password.com
+op8-release.1password.com
